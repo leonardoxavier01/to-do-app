@@ -92,29 +92,31 @@ const App = () => {
 
   return (
     <Router>
-      <div className="container">
-        <div className="content" >
-          <div className="lists">
-            <Lists data={lists} onAddList={addList} onRemoveList={removeList} />
-          </div>
-          <div className="list-page">
-            <Switch>
-              {lists.map((list) => (
-                <Route key={list.id} path={"/" + list.id}>
-                  <ListPage
-                    list={list}
-                    tasks={tasks}
-                    onAddTask={addTask}
-                    onEditTask={editTask}
-                    onRemoveTask={removeTask}
-                    onEditList={editList}
-                  />
+      <div className="section" >
+        <div className="container">
+          <div className="content" >
+            <div className="lists">
+              <Lists data={lists} onAddList={addList} onRemoveList={removeList} />
+            </div>
+            <div className="list-page">
+              <Switch>
+                {lists.map((list) => (
+                  <Route key={list.id} path={"/" + list.id}>
+                    <ListPage
+                      list={list}
+                      tasks={tasks}
+                      onAddTask={addTask}
+                      onEditTask={editTask}
+                      onRemoveTask={removeTask}
+                      onEditList={editList}
+                    />
+                  </Route>
+                ))}
+                <Route path="/">
+                  <p>Select your list</p>
                 </Route>
-              ))}
-              <Route path="/">
-                <p>Select your list</p>
-              </Route>
-            </Switch>
+              </Switch>
+            </div>
           </div>
         </div>
       </div>

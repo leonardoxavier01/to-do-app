@@ -1,6 +1,12 @@
 body {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    background-color: rgb(245, 242, 242);
+    background-color: rgb(247, 244, 244);
+}
+
+.section{
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .container {
