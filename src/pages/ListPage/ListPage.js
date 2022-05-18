@@ -5,6 +5,11 @@ import Task from "../../components/Task/Task";
 
 function ListPage(props) {
   const newTaskTextRef = React.useRef();
+  const listTitleRef = React.useRef();
+
+  const [isEditting, setIsEditting] = React.useState(false);
+  const [title, setTitle] = React.useState(props.list.title);
+
   const tasks = props.tasks.filter((task) => task.list === props.list.id);
 
   function addTaskHandler(e) {
@@ -18,9 +23,37 @@ function ListPage(props) {
     newTaskTextRef.current.value = "";
   }
 
+  function editButtonHandler() {
+    if (isEditting) {
+      props.onEditList({ id: props.list.id, title: title })
+      setIsEditting(false)
+    } else setIsEditting(true)
+  }
+
+  function editInputHandler(e) {
+    setTitle(listTitleRef.current.value)
+  }
+
   return (
     <div>
-      <h1>{props.list.title}</h1>{" "}
+      {isEditting && (
+        <form onSubmit={editButtonHandler}>
+          <input
+            type="text"
+            value={title}
+            ref={listTitleRef}
+            onChange={editInputHandler}
+          />
+          <button>save</button>
+        </form>
+      )}
+
+      {!isEditting && (
+        <div>
+          <h1>{props.list.title}</h1>{" "}
+          <button onClick={editButtonHandler}>edit</button>
+        </div>
+      )}
       <ul>
         {tasks.map((task) => (
           <li key={task.id}>
