@@ -17,7 +17,7 @@ const DUMMY_TASKS = [
   { id: uuid(), text: "Why We Sleep", list: DUMMY_LISTS[2].id }
 ];
 
-const App = () => {
+function App() {
   const [lists, setLists] = React.useState(DUMMY_LISTS);
   const [tasks, setTasks] = React.useState(DUMMY_TASKS);
 

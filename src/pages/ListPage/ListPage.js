@@ -4,9 +4,9 @@ import { v4 as uuid } from "uuid";
 import Task from "../../components/Task/Task";
 
 function ListPage(props) {
-  const newTaskTextRef = React.useRef();
   const listTitleRef = React.useRef();
-
+  const newTaskTextRef = React.useRef();
+  
   const [isEditting, setIsEditting] = React.useState(false);
   const [title, setTitle] = React.useState(props.list.title);
 
@@ -25,13 +25,13 @@ function ListPage(props) {
 
   function editButtonHandler() {
     if (isEditting) {
-      props.onEditList({ id: props.list.id, title: title })
-      setIsEditting(false)
-    } else setIsEditting(true)
+      props.onEditList({ id: props.list.id, title: title });
+      setIsEditting(false);
+    } else setIsEditting(true);
   }
 
   function editInputHandler(e) {
-    setTitle(listTitleRef.current.value)
+    setTitle(listTitleRef.current.value);
   }
 
   return (
@@ -54,10 +54,15 @@ function ListPage(props) {
           <button onClick={editButtonHandler}>edit</button>
         </div>
       )}
+
       <ul>
         {tasks.map((task) => (
           <li key={task.id}>
-            <Task task={task} onRemove={props.onRemoveTask} />
+            <Task
+              task={task}
+              onEdit={props.onEditTask}
+              onRemove={props.onRemoveTask}
+            />
           </li>
         ))}
         <li>
