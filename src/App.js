@@ -17,9 +17,40 @@ const DUMMY_TASKS = [
   { id: uuid(), text: "Why We Sleep", list: DUMMY_LISTS[2].id }
 ];
 
-function App() {
-  const [lists, setLists] = React.useState(DUMMY_LISTS);
-  const [tasks, setTasks] = React.useState(DUMMY_TASKS);
+// Get lists and tasks from localStorage
+let localLists = [];
+let localTasks = [];
+// If the JSON string isn't valid, we skip
+try {
+  const localLists_ = JSON.parse(localStorage.getItem("lists"));
+  const localTasks_ = JSON.parse(localStorage.getItem("tasks"));
+  // Check that vars aren't null
+  if (Array.isArray(localLists_) && Array.isArray(localTasks_)) {
+    localLists = localLists_;
+    localTasks = localTasks_;
+  }
+} catch {
+  // If JSON string is invalid do nothing
+}
+
+const App = () => {
+  const [lists, setListsState] = React.useState(localLists);
+  const [tasks, setTasksState] = React.useState(localTasks);
+
+  function saveData(lists_, tasks_) {
+    localStorage.setItem("lists", JSON.stringify(lists_));
+    localStorage.setItem("tasks", JSON.stringify(tasks_));
+  }
+
+  function setLists(lists_) {
+    setListsState(lists_);
+    saveData(lists_, tasks);
+  }
+
+  function setTasks(tasks_) {
+    setTasksState(tasks_);
+    saveData(lists, tasks_);
+  }
 
   function addList(list) {
     setLists([...lists, list]);
