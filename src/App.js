@@ -5,6 +5,8 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Lists from "./components/Lists/Lists";
 import ListPage from "./pages/ListPage/ListPage";
 
+import './styles.css'
+
 const DUMMY_LISTS = [
   { id: uuid(), title: "Groceries" },
   { id: uuid(), title: "Movies" },
@@ -17,20 +19,20 @@ const DUMMY_TASKS = [
   { id: uuid(), text: "Why We Sleep", list: DUMMY_LISTS[2].id }
 ];
 
-// Get lists and tasks from localStorage
+
 let localLists = [];
 let localTasks = [];
-// If the JSON string isn't valid, we skip
+
 try {
   const localLists_ = JSON.parse(localStorage.getItem("lists"));
   const localTasks_ = JSON.parse(localStorage.getItem("tasks"));
-  // Check that vars aren't null
+
   if (Array.isArray(localLists_) && Array.isArray(localTasks_)) {
     localLists = localLists_;
     localTasks = localTasks_;
   }
 } catch {
-  // If JSON string is invalid do nothing
+
 }
 
 const App = () => {
@@ -90,24 +92,32 @@ const App = () => {
 
   return (
     <Router>
-      <Lists data={lists} onAddList={addList} onRemoveList={removeList} />
-      <Switch>
-        {lists.map((list) => (
-          <Route key={list.id} path={"/" + list.id}>
-            <ListPage
-              list={list}
-              tasks={tasks}
-              onAddTask={addTask}
-              onEditTask={editTask}
-              onRemoveTask={removeTask}
-              onEditList={editList}
-            />
-          </Route>
-        ))}
-        <Route path="/">
-          <p>Homepage</p>
-        </Route>
-      </Switch>
+      <div className="container">
+        <div className="content" >
+          <div className="lists">
+            <Lists data={lists} onAddList={addList} onRemoveList={removeList} />
+          </div>
+          <div className="list-page">
+            <Switch>
+              {lists.map((list) => (
+                <Route key={list.id} path={"/" + list.id}>
+                  <ListPage
+                    list={list}
+                    tasks={tasks}
+                    onAddTask={addTask}
+                    onEditTask={editTask}
+                    onRemoveTask={removeTask}
+                    onEditList={editList}
+                  />
+                </Route>
+              ))}
+              <Route path="/">
+                <p>Select your list</p>
+              </Route>
+            </Switch>
+          </div>
+        </div>
+      </div>
     </Router>
   );
 }
