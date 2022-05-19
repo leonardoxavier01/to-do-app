@@ -1,24 +1,10 @@
 import React from "react";
-import { v4 as uuid } from "uuid";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 import Lists from "./components/Lists";
 import ListPage from "./pages/ListPage";
 
 import './styles.css'
-
-const DUMMY_LISTS = [
-  { id: uuid(), title: "Groceries" },
-  { id: uuid(), title: "Movies" },
-  { id: uuid(), title: "Books" }
-];
-
-const DUMMY_TASKS = [
-  { id: uuid(), text: "Buy ingredients for cake", list: DUMMY_LISTS[0].id },
-  { id: uuid(), text: "Buy fruits/vegetables", list: DUMMY_LISTS[0].id },
-  { id: uuid(), text: "Why We Sleep", list: DUMMY_LISTS[2].id }
-];
-
 
 let localLists = [];
 let localTasks = [];
