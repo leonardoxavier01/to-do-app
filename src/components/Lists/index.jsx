@@ -1,17 +1,14 @@
-import React from "react";
+import React, { useRef } from "react";
 import { v4 as uuid } from "uuid";
-
-import { BiPlus } from "react-icons/bi";
-import { BiAlignLeft } from "react-icons/bi";
 import { Link } from "react-router-dom";
 import ListName from "../ListName";
-
 import { FaBuffer } from "react-icons/fa";
+import { BiPlus } from "react-icons/bi";
 
-function Lists(props) {
-  const newListTitleRef = React.useRef();
+const Lists = (props) => {
+  const newListTitleRef = useRef();
 
-  function addListHandler(e) {
+  const addListHandler = (e) => {
     e.preventDefault();
 
     const list = { id: uuid(), title: newListTitleRef.current.value };
@@ -20,7 +17,7 @@ function Lists(props) {
     newListTitleRef.current.value = "";
   }
 
-  function removeListHandler(index) {
+  const removeListHandler = (index) => {
     props.onRemoveList(index);
   }
 

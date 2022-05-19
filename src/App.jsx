@@ -2,8 +2,8 @@ import React from "react";
 import { v4 as uuid } from "uuid";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
-import Lists from "./components/Lists/Lists";
-import ListPage from "./pages/ListPage/ListPage";
+import Lists from "./components/Lists";
+import ListPage from "./pages/ListPage";
 
 import './styles.css'
 
@@ -39,51 +39,51 @@ const App = () => {
   const [lists, setListsState] = React.useState(localLists);
   const [tasks, setTasksState] = React.useState(localTasks);
 
-  function saveData(lists_, tasks_) {
+  const saveData = (lists_, tasks_) => {
     localStorage.setItem("lists", JSON.stringify(lists_));
     localStorage.setItem("tasks", JSON.stringify(tasks_));
   }
 
-  function setLists(lists_) {
+  const setLists = (lists_) => {
     setListsState(lists_);
     saveData(lists_, tasks);
   }
 
-  function setTasks(tasks_) {
+  const setTasks = (tasks_) => {
     setTasksState(tasks_);
     saveData(lists, tasks_);
   }
 
-  function addList(list) {
+  const addList = (list) => {
     setLists([...lists, list]);
   }
 
-  function editList(newList) {
+  const editList = (newList) => {
     const tempLists = lists.slice();
     const index = tempLists.findIndex((list) => list.id === newList.id);
     Object.assign(tempLists[index], newList);
     setLists(tempLists);
   }
 
-  function removeList(id) {
+  const removeList = (id) => {
     const tempLists = lists.slice();
     const index = tempLists.findIndex((list) => list.id === id);
     tempLists.splice(index, 1);
     setLists(tempLists);
   }
 
-  function addTask(task) {
+  const addTask = (task) => {
     setTasks([...tasks, task]);
   }
 
-  function editTask(newTask) {
+  const editTask = (newTask) => {
     const tempTasks = tasks.slice();
     const index = tempTasks.findIndex((task) => task.id === newTask.id);
     Object.assign(tempTasks[index], newTask);
     setTasks(tempTasks);
   }
 
-  function removeTask(id) {
+  const removeTask = (id) => {
     const tempTasks = tasks.slice();
     const index = tempTasks.findIndex((task) => task.id === id);
     tempTasks.splice(index, 1);

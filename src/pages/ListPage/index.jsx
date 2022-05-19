@@ -1,19 +1,18 @@
-import React from "react";
+import React, { useRef, useState } from "react";
 import { v4 as uuid } from "uuid";
-
+import Task from "../../components/Task";
 import { BiPlus } from "react-icons/bi";
-import Task from "../../components/Task/Task";
 
-function ListPage(props) {
-  const listTitleRef = React.useRef();
-  const newTaskTextRef = React.useRef();
-  
-  const [isEditting, setIsEditting] = React.useState(false);
-  const [title, setTitle] = React.useState(props.list.title);
+const ListPage = (props) => {
+  const listTitleRef = useRef();
+  const newTaskTextRef = useRef();
+
+  const [isEditting, setIsEditting] = useState(false);
+  const [title, setTitle] = useState(props.list.title);
 
   const tasks = props.tasks.filter((task) => task.list === props.list.id);
 
-  function addTaskHandler(e) {
+  const addTaskHandler = (e) => {
     e.preventDefault();
     const task = {
       id: uuid(),
@@ -24,14 +23,14 @@ function ListPage(props) {
     newTaskTextRef.current.value = "";
   }
 
-  function editButtonHandler() {
+  const editButtonHandler = () => {
     if (isEditting) {
       props.onEditList({ id: props.list.id, title: title });
       setIsEditting(false);
     } else setIsEditting(true);
   }
 
-  function editInputHandler(e) {
+  const editInputHandler = (e) => {
     setTitle(listTitleRef.current.value);
   }
 
@@ -69,7 +68,7 @@ function ListPage(props) {
         <li>
           <form className="container_form" onSubmit={addTaskHandler}>
             <input className="input" type="text" placeholder="New Task" ref={newTaskTextRef} />
-            <button className="button_add"><BiPlus size={17}/></button>
+            <button className="button_add"><BiPlus size={17} /></button>
           </form>
         </li>
       </ul>

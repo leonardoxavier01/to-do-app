@@ -1,29 +1,29 @@
-import React from "react";
+import React, { useState, useRef } from "react";
 
-function Task(props) {
-  const taskTextRef = React.useRef();
-  const taskDoneRef = React.useRef();
-  const [isEditting, setIsEditting] = React.useState(false);
-  const [text, setText] = React.useState(props.task.text);
-  const [isDone, setIsDone] = React.useState(props.task.isDone);
+const Task = (props) => {
+  const taskTextRef = useRef();
+  const taskDoneRef = useRef();
+  const [isEditting, setIsEditting] = useState(false);
+  const [text, setText] = useState(props.task.text);
+  const [isDone, setIsDone] = useState(props.task.isDone);
 
-  function editButtonHandler() {
+  const editButtonHandler = () => {
     if (isEditting) {
       props.onEdit({ id: props.task.id, text: text });
       setIsEditting(false);
     } else setIsEditting(true);
   }
 
-  function editInputHandler() {
+  const editInputHandler = () => {
     setText(taskTextRef.current.value);
   }
 
-  function doneHandler() {
+  const doneHandler = () => {
     setIsDone(taskDoneRef.current.value);
     props.onEdit({ id: props.task.id, isDone: isDone });
   }
 
-  function removeHandler() {
+  const removeHandler = () => {
     return props.onRemove(props.id);
   }
 
