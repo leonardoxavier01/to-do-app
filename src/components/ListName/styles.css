@@ -1,0 +1,14 @@
+.list_name{
+    background-color: rgb(243, 250, 248);
+    width: 90%;
+    height: 2rem;
+    border-radius: 0.50rem;
+    margin-bottom: 0.70rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.list_name:hover{
+    background-color: rgb(183, 216, 205)
+}
