@@ -43,6 +43,7 @@ body {
     height: 30rem;
     width: 60%;
     border-radius: 1%;
+    padding-left: 2rem;
 }
 
 .container_form{
