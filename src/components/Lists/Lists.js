@@ -1,6 +1,7 @@
 import React from "react";
 import { v4 as uuid } from "uuid";
 
+import { BiPlus } from "react-icons/bi";
 import { Link } from "react-router-dom";
 
 function Lists(props) {
@@ -28,9 +29,9 @@ function Lists(props) {
         </li>
       ))}
       <li>
-        <form onSubmit={addListHandler}>
-          <input type="text" placeholder="New List" ref={newListTitleRef} />
-          <button>Add</button>
+        <form className="container_form" onSubmit={addListHandler}>
+          <input className="input" type="text" placeholder="New List" ref={newListTitleRef} />
+          <button className="button_add"><BiPlus size={17}/></button>
         </form>
       </li>
     </ul>

@@ -7,7 +7,7 @@ const Input = ({ref}) => {
   return (
     <div className='container_input'>
       <input type="text" placeholder='New List' className='input'/>
-      <button className='button'><BiPlus size={17} /></button>
+      <button className='button_add'><BiPlus size={17} /></button>
     </div>
   )
 }
