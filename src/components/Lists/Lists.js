@@ -34,7 +34,7 @@ function Lists(props) {
                 <FaBuffer color={"#1a8a52"} />
                 <span>{list.title}</span>
               </div>
-              <button className="button_add margin_rigth" onClick={() => removeListHandler(index)}>x</button>
+              <button className="button_add margin_rigth" onClick={() => removeListHandler(list.id)}>x</button>
             </ListName>
           </Link>
         </li>
