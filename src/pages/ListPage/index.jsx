@@ -66,7 +66,7 @@ const ListPage = (props) => {
           </li>
         ))}
         <li>
-          <form className="container_form" onSubmit={addTaskHandler}>
+          <form className="container_form margin_top" onSubmit={addTaskHandler}>
             <input className="input" type="text" placeholder="New Task" ref={newTaskTextRef} />
             <button className="button_add"><BiPlus size={17} /></button>
           </form>

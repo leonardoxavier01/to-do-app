@@ -31,20 +31,21 @@ const Task = (props) => {
   }
 
   return (
-    <div className="container_task">
+    <>
       {isEditting && (
-        <form onSubmit={editButtonHandler}>
+        <form className="container_form_edit" onSubmit={editButtonHandler}>
           <input
+          className="input"
             type="text"
             value={text}
             ref={taskTextRef}
             onChange={editInputHandler}
           />
-          <button>save</button>
+          <button className="button_add">save</button>
         </form>
       )}
       {!isEditting && (
-        <>
+        <div className="container_task">
           <div className="text_checkbox">
             <input
               type="checkbox"
@@ -55,12 +56,14 @@ const Task = (props) => {
             <span>{text}</span>
           </div>
           <div className="buttons_task">
-            <button className="button_task" onClick={editButtonHandler}><BsPencilSquare color={"#1a8a52"} size={16} /></button>
-            <button className="button_task" onClick={removeHandler}><MdOutlineDelete color={"#c2473e"} size={18} /></button>
+            <button className="button_task" onClick={editButtonHandler}>
+              <BsPencilSquare color={"#1a8a52"} size={16} /></button>
+            <button className="button_task" onClick={removeHandler}>
+              <MdOutlineDelete color={"#c2473e"} size={18} /></button>
           </div>
-        </>
+        </div>
       )}
-    </div>
+    </>
   );
 }
 
