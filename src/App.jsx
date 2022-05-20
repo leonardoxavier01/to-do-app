@@ -98,7 +98,7 @@ const App = () => {
                 </Route>
               ))}
               <Route path="/">
-                <p>Select your list</p>
+                <p>Create or select your list</p>
               </Route>
             </Switch>
           </div>
