@@ -1,0 +1,22 @@
+.container_title{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 55%;
+    height: 4rem;
+}
+
+.testx{
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.list_title{
+    margin-left: 1rem;
+    color: black;
+    text-decoration: underline;
+}
+

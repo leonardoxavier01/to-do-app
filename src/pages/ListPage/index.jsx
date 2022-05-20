@@ -1,6 +1,7 @@
 import React, { useRef, useState } from "react";
 import { v4 as uuid } from "uuid";
 import Task from "../../components/Task";
+import ListTitle from "../../components/ListTitle";
 import { BiPlus } from "react-icons/bi";
 
 const ListPage = (props) => {
@@ -49,10 +50,7 @@ const ListPage = (props) => {
       )}
 
       {!isEditting && (
-        <div>
-          <h1>{props.list.title}</h1>{" "}
-          <button onClick={editButtonHandler}>edit</button>
-        </div>
+        <ListTitle onClickHandle={editButtonHandler}>{props.list.title}</ListTitle>
       )}
 
       <ul>
