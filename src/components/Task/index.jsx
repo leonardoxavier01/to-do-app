@@ -1,7 +1,7 @@
 import React, { useState, useRef } from "react";
 import './styles.css'
-import {BsPencilSquare} from 'react-icons/bs'
-import {MdOutlineDelete} from 'react-icons/md'
+import { BsPencilSquare } from 'react-icons/bs'
+import { MdOutlineDelete } from 'react-icons/md'
 
 const Task = (props) => {
   const taskTextRef = useRef();
@@ -55,8 +55,8 @@ const Task = (props) => {
             <span>{text}</span>
           </div>
           <div className="buttons_task">
-            <button className="button_task" onClick={editButtonHandler}><BsPencilSquare color={"#1a8a52"} size={16}/></button>
-            <button className="button_task" onClick={removeHandler}><MdOutlineDelete color={"#c2473e"} size={18}/></button>
+            <button className="button_task" onClick={editButtonHandler}><BsPencilSquare color={"#1a8a52"} size={16} /></button>
+            <button className="button_task" onClick={removeHandler}><MdOutlineDelete color={"#c2473e"} size={18} /></button>
           </div>
         </>
       )}

@@ -9,6 +9,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    flex-direction: row;
 } 
 
 .content_task{
@@ -36,4 +37,12 @@
     background-color: transparent;
     cursor: pointer;
     margin-left: 0.50rem;
+}
+
+.input_edit{
+    margin-left: 2rem;
+    border: 0;
+    font-size: 17px;
+    outline: none;
+    background-color: transparent;
 }
