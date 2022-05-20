@@ -38,14 +38,15 @@ const ListPage = (props) => {
   return (
     <div>
       {isEditting && (
-        <form onSubmit={editButtonHandler}>
+        <form className="container_form_edit" onSubmit={editButtonHandler}>
           <input
+            className="input"
             type="text"
             value={title}
             ref={listTitleRef}
             onChange={editInputHandler}
           />
-          <button>save</button>
+          <button className="button_add">save</button>
         </form>
       )}
 
