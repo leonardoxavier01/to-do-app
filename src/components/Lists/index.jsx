@@ -17,8 +17,8 @@ const Lists = (props) => {
     newListTitleRef.current.value = "";
   }
 
-  const removeListHandler = (index) => {
-    props.onRemoveList(index);
+  const removeListHandler = (id) => {
+    props.onRemoveList(id);
   }
 
   return (
@@ -31,7 +31,8 @@ const Lists = (props) => {
                 <FaBuffer color={"#1a8a52"} />
                 <span>{list.title}</span>
               </div>
-              <button className="button_add margin_rigth" onClick={() => removeListHandler(list.id)}>x</button>
+              <button className="button_add margin_rigth"
+                onClick={() => removeListHandler(list.id)}>x</button>
             </ListName>
           </Link>
         </li>

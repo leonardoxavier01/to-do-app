@@ -61,7 +61,7 @@ const ListPage = (props) => {
             <Task
               task={task}
               onEdit={props.onEditTask}
-              onRemove={props.onRemoveTask}
+              onRemove={() => props.onRemoveTask(task.id)}
             />
           </li>
         ))}

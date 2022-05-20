@@ -35,7 +35,6 @@ const Task = (props) => {
         ref={taskDoneRef}
         checked={isDone ? true : false}
       />
-
       {isEditting && (
         <form onSubmit={editButtonHandler}>
           <input
@@ -47,14 +46,12 @@ const Task = (props) => {
           <button>save</button>
         </form>
       )}
-
       {!isEditting && (
         <span>
           <span>{text}</span>
           <button onClick={editButtonHandler}>edit</button>
         </span>
       )}
-
       <button onClick={removeHandler}>x</button>
     </div>
   );
