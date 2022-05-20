@@ -1,4 +1,5 @@
 import React, { useState, useRef } from "react";
+import './styles.css'
 
 const Task = (props) => {
   const taskTextRef = useRef();
@@ -28,13 +29,7 @@ const Task = (props) => {
   }
 
   return (
-    <div>
-      <input
-        type="checkbox"
-        onChange={doneHandler}
-        ref={taskDoneRef}
-        checked={isDone ? true : false}
-      />
+    <div className="container_task">
       {isEditting && (
         <form onSubmit={editButtonHandler}>
           <input
@@ -47,12 +42,22 @@ const Task = (props) => {
         </form>
       )}
       {!isEditting && (
-        <span>
-          <span>{text}</span>
-          <button onClick={editButtonHandler}>edit</button>
-        </span>
+        <>
+          <div className="text_checkbox">
+            <input
+              type="checkbox"
+              onChange={doneHandler}
+              ref={taskDoneRef}
+              checked={isDone ? true : false}
+            />
+            <span>{text}</span>
+          </div>
+          <div className="buttons_task">
+            <button onClick={editButtonHandler}>edit</button>
+            <button onClick={removeHandler}>x</button>
+          </div>
+        </>
       )}
-      <button onClick={removeHandler}>x</button>
     </div>
   );
 }
