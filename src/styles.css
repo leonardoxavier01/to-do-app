@@ -40,10 +40,10 @@ body {
 
 .list-page {
     background-color: rgb(218, 236, 232);
-    height: 30rem;
+    height: 24rem;
     width: 60%;
     border-radius: 1%;
-    padding-left: 2rem;
+    padding: 2rem 2rem 4rem 5rem;
 }
 
 .container_form{
