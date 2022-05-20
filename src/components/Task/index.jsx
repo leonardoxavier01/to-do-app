@@ -35,7 +35,8 @@ const Task = (props) => {
       {isEditting && (
         <form className="container_form_edit" onSubmit={editButtonHandler}>
           <input
-          className="input"
+            className="input"
+            placeholder="Edit Task"
             type="text"
             value={text}
             ref={taskTextRef}
