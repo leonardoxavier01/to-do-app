@@ -38,7 +38,7 @@ const ListPage = (props) => {
   return (
     <div>
       {isEditting && (
-        <form className="container_form_edit" onSubmit={editButtonHandler}>
+        <form className="container_form_edit width_provisore" onSubmit={editButtonHandler}>
           <input
             className="input"
             type="text"
