@@ -1,4 +1,4 @@
-.container_title{
+.container_title {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -7,16 +7,16 @@
     height: 4rem;
 }
 
-.testx{
+.box_text_button {
     display: flex;
     align-items: center;
     flex-direction: row;
     justify-content: space-between;
 }
 
-.list_title{
+.list_title {
     margin-left: 1rem;
+    margin-right: 0.45rem;
     color: black;
     text-decoration: underline;
 }
-
