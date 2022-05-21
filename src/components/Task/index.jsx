@@ -1,5 +1,4 @@
 import React, { useState, useRef } from "react";
-import './styles.css'
 import TaskBox from "../TaskBox";
 import InputEdit from "../InputEdit";
 
