@@ -2,7 +2,7 @@ import React from 'react'
 import './styles.css'
 import { FaBuffer } from 'react-icons/fa'
 
-const ListName = ({ title, onClick }) => {
+const ListNameBox = ({ title, onClick }) => {
   return (
     <div className='list_name'>
       <div className="box_icon_title">
@@ -15,4 +15,4 @@ const ListName = ({ title, onClick }) => {
   )
 }
 
-export default ListName
+export default ListNameBox

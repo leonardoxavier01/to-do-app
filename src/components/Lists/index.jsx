@@ -1,7 +1,7 @@
 import React, { useRef } from "react";
 import { v4 as uuid } from "uuid";
 import { Link } from "react-router-dom";
-import ListName from "../ListName";
+import ListNameBox from "../ListNameBox";
 import Input from '../InputText'
 
 const Lists = (props) => {
@@ -25,7 +25,7 @@ const Lists = (props) => {
       {props.data.map((list, index) => (
         <li key={index}>
           <Link className="name_list" to={"/" + list.id}>
-            <ListName
+            <ListNameBox
               title={list.title}
               onClick={() => removeListHandler(list.id)}
             />
