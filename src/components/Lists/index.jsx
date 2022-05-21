@@ -5,6 +5,8 @@ import ListName from "../ListName";
 import { FaBuffer } from "react-icons/fa";
 import { BiPlus } from "react-icons/bi";
 
+import Input from '../InputText'
+
 const Lists = (props) => {
   const newListTitleRef = useRef();
 
@@ -38,10 +40,11 @@ const Lists = (props) => {
         </li>
       ))}
       <li>
-        <form className="container_form" onSubmit={addListHandler}>
-          <input className="input" type="text" maxLength="16" placeholder="New List" ref={newListTitleRef} />
-          <button className="button_add"><BiPlus size={17} /></button>
-        </form>
+        <Input
+          onSubmit={addListHandler}
+          placeholder={'New List'}
+          ref={newListTitleRef}
+        />
       </li>
     </ul>
   );
