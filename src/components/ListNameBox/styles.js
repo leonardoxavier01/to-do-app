@@ -20,6 +20,7 @@ export const Content = styled.div`
     flex-direction: row;
     span{
         margin-left: 0.438rem;
+        color: rgb(44, 71, 62);
     }
 `
 export const ButtonDelStyled = styled.button`
