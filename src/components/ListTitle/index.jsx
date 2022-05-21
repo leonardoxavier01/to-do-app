@@ -5,11 +5,11 @@ import { TitleContainer, Content, ButtonEditStyled } from './styles';
 
 const ListTitle = ({ children, onClickHandle }) => {
     return (
-        <TitleContainer className='container_title'>
-            <Content className='box_text_button'>
+        <TitleContainer>
+            <Content>
                 <FaBuffer color={"#1a8a52"} size={28} />
-                <h1 className='list_title'>{children}</h1>
-                <ButtonEditStyled className='button_add' onClick={onClickHandle}>
+                <h1>{children}</h1>
+                <ButtonEditStyled onClick={onClickHandle}>
                     <BsPencilSquare color={"#1a8a52"} size={16} />
                 </ButtonEditStyled>
             </Content>

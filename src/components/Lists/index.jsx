@@ -24,7 +24,7 @@ const Lists = (props) => {
     <ul>
       {props.data.map((list, index) => (
         <li key={index}>
-          <Link className="name_list" to={"/" + list.id}>
+          <Link to={"/" + list.id}>
             <ListNameBox
               title={list.title}
               onClick={() => removeListHandler(list.id)}

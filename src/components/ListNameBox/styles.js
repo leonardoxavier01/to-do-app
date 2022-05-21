@@ -21,6 +21,8 @@ export const Content = styled.div`
     span{
         margin-left: 0.438rem;
         color: rgb(44, 71, 62);
+        font-size: 1rem;
+        font-weight: 500;
     }
 `
 export const ButtonDelStyled = styled.button`

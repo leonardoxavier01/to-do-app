@@ -20,6 +20,8 @@ export const TextCheckbox = styled.div`
     span{
         margin-left: 0.50rem;
         margin-right: 4rem;
+        font-size: 1rem;
+        font-weight: 500;
     }
 `
 

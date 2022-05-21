@@ -5,7 +5,7 @@ export const TitleContainer = styled.div`
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    width: 55%;
+    width: 90%;
     height: 4rem;
     `
 export const Content = styled.div`
@@ -15,9 +15,10 @@ export const Content = styled.div`
     justify-content: space-between;
     h1{
         margin-left: 1rem;
-        margin-right: 0.45rem;
+        margin-right: 0.10rem;
         color: black;
-        text-decoration: underline;
+        font-weight: 600;
+        font-size: 2.4rem;
     }
 `
 export const ButtonEditStyled = styled.div`
