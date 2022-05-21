@@ -1,6 +1,7 @@
 import React, { useState, useRef } from "react";
 import './styles.css'
 import TaskBox from "../TaskBox";
+import InputEdit from "../InputEdit";
 
 const Task = (props) => {
   const taskTextRef = useRef();
@@ -32,17 +33,12 @@ const Task = (props) => {
   return (
     <>
       {isEditting && (
-        <form className="container_form_edit" onSubmit={editButtonHandler}>
-          <input
-            className="input"
-            placeholder="Edit Task"
-            type="text"
-            value={text}
-            ref={taskTextRef}
-            onChange={editInputHandler}
-          />
-          <button className="button_add">save</button>
-        </form>
+        <InputEdit
+        onSubmit={editButtonHandler}
+        text={text}
+        ref={taskTextRef}
+        onChange={editInputHandler}
+        />
       )}
       {!isEditting && (
         <TaskBox

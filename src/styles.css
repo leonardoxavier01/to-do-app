@@ -67,12 +67,7 @@ body {
     background-color: transparent;
 }
 
-.button_add {
-    background-color: transparent;
-    border: 0;
-    outline: none;
-    cursor: pointer;
-}
+
 
 ul {
     list-style: none;
