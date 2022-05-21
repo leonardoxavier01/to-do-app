@@ -3,6 +3,7 @@ import { v4 as uuid } from "uuid";
 import Task from "../../components/Task";
 import ListTitle from "../../components/ListTitle";
 import InputText from "../../components/InputText";
+import InputEdit from "../../components/InputEdit";
 
 const ListPage = (props) => {
   const listTitleRef = useRef();
@@ -38,16 +39,14 @@ const ListPage = (props) => {
   return (
     <div>
       {isEditting && (
-        <form className="container_form_edit width_provisore" onSubmit={editButtonHandler}>
-          <input
-            className="input"
-            type="text"
-            value={title}
-            ref={listTitleRef}
-            onChange={editInputHandler}
-          />
-          <button className="button_add">save</button>
-        </form>
+
+        <InputEdit
+          width={50}
+          onSubmit={editButtonHandler}
+          value={title}
+          ref={listTitleRef}
+          onChange={editInputHandler}
+        />
       )}
       {!isEditting && (
         <ListTitle onClickHandle={editButtonHandler}>{props.list.title}</ListTitle>

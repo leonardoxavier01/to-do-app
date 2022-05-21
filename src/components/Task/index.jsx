@@ -33,10 +33,12 @@ const Task = (props) => {
     <>
       {isEditting && (
         <InputEdit
-        onSubmit={editButtonHandler}
-        text={text}
-        ref={taskTextRef}
-        onChange={editInputHandler}
+          width={90}
+          placeholder={'Edit Task'}
+          onSubmit={editButtonHandler}
+          value={text}
+          ref={taskTextRef}
+          onChange={editInputHandler}
         />
       )}
       {!isEditting && (
