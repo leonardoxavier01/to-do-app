@@ -1,7 +1,6 @@
 import React, { useState, useRef } from "react";
 import './styles.css'
-import { BsPencilSquare } from 'react-icons/bs'
-import { MdOutlineDelete } from 'react-icons/md'
+import TaskBox from "../TaskBox";
 
 const Task = (props) => {
   const taskTextRef = useRef();
@@ -46,23 +45,14 @@ const Task = (props) => {
         </form>
       )}
       {!isEditting && (
-        <div className="container_task">
-          <div className="text_checkbox">
-            <input
-              type="checkbox"
-              onChange={doneHandler}
-              ref={taskDoneRef}
-              checked={isDone ? true : false}
-            />
-            <span>{text}</span>
-          </div>
-          <div className="buttons_task">
-            <button className="button_task" onClick={editButtonHandler}>
-              <BsPencilSquare color={"#1a8a52"} size={16} /></button>
-            <button className="button_task" onClick={removeHandler}>
-              <MdOutlineDelete color={"#c2473e"} size={18} /></button>
-          </div>
-        </div>
+        <TaskBox
+          doneHandler={doneHandler}
+          ref={taskDoneRef}
+          checked={isDone ? true : false}
+          text={text}
+          editButtonHandler={editButtonHandler}
+          removeHandler={removeHandler}
+        />
       )}
     </>
   );
