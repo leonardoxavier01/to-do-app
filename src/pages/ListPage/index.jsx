@@ -2,7 +2,7 @@ import React, { useRef, useState } from "react";
 import { v4 as uuid } from "uuid";
 import Task from "../../components/Task";
 import ListTitle from "../../components/ListTitle";
-import { BiPlus } from "react-icons/bi";
+import InputText from "../../components/InputText";
 
 const ListPage = (props) => {
   const listTitleRef = useRef();
@@ -49,11 +49,9 @@ const ListPage = (props) => {
           <button className="button_add">save</button>
         </form>
       )}
-
       {!isEditting && (
         <ListTitle onClickHandle={editButtonHandler}>{props.list.title}</ListTitle>
       )}
-
       <ul>
         {tasks.map((task) => (
           <li key={task.id}>
@@ -65,10 +63,11 @@ const ListPage = (props) => {
           </li>
         ))}
         <li>
-          <form className="container_form margin_top" onSubmit={addTaskHandler}>
-            <input className="input" type="text" placeholder="New Task" ref={newTaskTextRef} />
-            <button className="button_add"><BiPlus size={17} /></button>
-          </form>
+          <InputText
+            onSubmit={addTaskHandler}
+            placeholder={'New Task'}
+            ref={newTaskTextRef}
+          />
         </li>
       </ul>
     </div>

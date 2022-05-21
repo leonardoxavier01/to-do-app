@@ -3,7 +3,6 @@ import { v4 as uuid } from "uuid";
 import { Link } from "react-router-dom";
 import ListName from "../ListName";
 import { FaBuffer } from "react-icons/fa";
-import { BiPlus } from "react-icons/bi";
 
 import Input from '../InputText'
 
