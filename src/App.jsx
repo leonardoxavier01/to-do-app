@@ -1,10 +1,8 @@
 import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-
 import Lists from "./components/Lists";
 import ListPage from "./pages/ListPage";
-
-import './styles.css'
+import './styles/App.css'
 
 let localLists = [];
 let localTasks = [];

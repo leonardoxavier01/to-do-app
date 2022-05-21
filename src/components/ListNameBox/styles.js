@@ -1,4 +1,6 @@
-.list_name {
+import styled from 'styled-components';
+
+export const ListNameContainer = styled.div`
     background-color: rgb(243, 250, 248);
     width: 90%;
     height: 2rem;
@@ -7,24 +9,24 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-}
-
-.list_name:hover {
-    background-color: rgb(183, 216, 205)
-}
-
-.box_icon_title {
+    :hover{
+        background-color: rgb(183, 216, 205)
+    }
+`
+export const Content = styled.div`
     margin-left: 0.625rem;
     display: flex;
     align-items: center;
     flex-direction: row;
-}
-
-.button_delete {
+    span{
+        margin-left: 0.438rem;
+    }
+`
+export const ButtonDelStyled = styled.button`
     background-color: transparent;
     border: 0;
     outline: none;
     cursor: pointer;
     margin-right: 0.75rem;
     margin-left: 0.60rem;
-}
+`

@@ -1,4 +1,6 @@
-.container_input{
+import styled from 'styled-components'
+
+export const FormContainer = styled.form`
     background-color: rgb(183, 216, 205);
     width: 90%;
     height: 2rem;
@@ -9,19 +11,18 @@
     justify-content: center;
     flex-direction: row;
     margin-top: 0.90rem;
-}
-
-.input{
+`
+export const InputStyled = styled.input`
     width: 80%;
     border: 0;
-    font-size: 17px;
+    font-size: 1.063rem;
     outline: none;
     background-color: transparent;
-}
-
-.button_add{
+`
+export const ButtonAddStyled = styled.button`
     background-color: transparent;
     border: 0;
     outline: none;
     cursor: pointer;
-}
+`
+

@@ -39,7 +39,6 @@ const ListPage = (props) => {
   return (
     <div>
       {isEditting && (
-
         <InputEdit
           width={50}
           onSubmit={editButtonHandler}

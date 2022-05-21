@@ -1,4 +1,6 @@
-.container_task {
+import styled from 'styled-components'
+
+export const TaskContainer = styled.div`
     background-color: rgb(243, 250, 248);
     width: 90%;
     height: 2rem;
@@ -10,30 +12,27 @@
     align-items: center;
     justify-content: space-between;
     flex-direction: row;
-}
-
-.text_checkbox {
+`
+export const TextCheckbox = styled.div`
     margin-left: 1.5rem;
     display: flex;
     align-items: center;
-}
+    span{
+        margin-left: 0.50rem;
+        margin-right: 4rem;
+    }
+`
 
-.text_checkbox span {
-    margin-left: 0.50rem;
-    margin-right: 4rem;
-}
-
-.buttons_task {
+export const WrapperButtons = styled.div`
     margin-right: 1rem;
     display: flex;
     flex-direction: row;
     align-items: center;
-}
-
-.button_task {
-    outline: none;
-    border: 0;
-    background-color: transparent;
-    cursor: pointer;
-    margin-left: 0.50rem;
-}
+    button{
+        outline: none;
+        border: 0;
+        background-color: transparent;
+        cursor: pointer;
+        margin-left: 0.50rem;
+    }
+`

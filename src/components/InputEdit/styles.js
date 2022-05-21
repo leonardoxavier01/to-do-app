@@ -16,7 +16,7 @@ export const FormContainer = styled.form`
 export const InputStyled = styled.input`
     width: 80%;
     border: 0;
-    font-size: 17px;
+    font-size: 1.063rem;
     outline: none;
     background-color: transparent;
 `

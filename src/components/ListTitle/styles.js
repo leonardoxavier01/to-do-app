@@ -1,29 +1,28 @@
-.container_title {
+import styled from 'styled-components';
+
+export const TitleContainer = styled.div`
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
     width: 55%;
     height: 4rem;
-}
-
-.box_text_button {
+    `
+export const Content = styled.div`
     display: flex;
     align-items: center;
     flex-direction: row;
     justify-content: space-between;
-}
-
-.list_title {
-    margin-left: 1rem;
-    margin-right: 0.45rem;
-    color: black;
-    text-decoration: underline;
-}
-
-.button_add {
+    h1{
+        margin-left: 1rem;
+        margin-right: 0.45rem;
+        color: black;
+        text-decoration: underline;
+    }
+`
+export const ButtonEditStyled = styled.div`
     background-color: transparent;
     border: 0;
     outline: none;
     cursor: pointer;
-}
+`
