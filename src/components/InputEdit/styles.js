@@ -1,15 +1,9 @@
-.input_edit {
-    margin-left: 2rem;
-    border: 0;
-    font-size: 17px;
-    outline: none;
-    background-color: transparent;
-}
+import styled from 'styled-components'
 
-.container_form_edit {
+export const FormContainer = styled.form`
     margin-top: 0.90rem;
     background-color: rgb(243, 250, 248);
-    width: 90%;
+    width: ${(props) => props.width}%;
     height: 2rem;
     border-radius: 26.25rem;
     box-shadow: 1px 1px 2px 2px rgb(236, 236, 236);
@@ -18,11 +12,17 @@
     justify-content: center;
     flex-direction: row;
     border: 1px solid rgba(0, 0, 0, 0.322);
-}
-
-.button_save {
+`
+export const InputStyled = styled.input`
+    width: 80%;
+    border: 0;
+    font-size: 17px;
+    outline: none;
+    background-color: transparent;
+`
+export const ButtonSaveStyled = styled.button`
     background-color: transparent;
     border: 0;
     outline: none;
     cursor: pointer;
-}
+`

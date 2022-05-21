@@ -1,19 +1,19 @@
 import React from 'react'
-import './styles.css'
+
+import { FormContainer, InputStyled, ButtonSaveStyled } from './styles'
 
 const InputEdit = React.forwardRef((props, ref) => {
     return (
-        <form className="container_form_edit" onSubmit={props.onSubmit}>
-            <input
-                className="input"
-                placeholder="Edit Task"
+        <FormContainer width={props.width} onSubmit={props.onSubmit}>
+            <InputStyled
+                placeholder={props.placeholder}
                 type="text"
-                value={props.text}
+                value={props.value}
                 ref={ref}
                 onChange={props.onChange}
             />
-            <button className="button_save">save</button>
-        </form>
+            <ButtonSaveStyled >save</ButtonSaveStyled>
+        </FormContainer>
     )
 })
 
