@@ -1,4 +1,4 @@
-.list_name{
+.list_name {
     background-color: rgb(243, 250, 248);
     width: 90%;
     height: 2rem;
@@ -9,6 +9,22 @@
     justify-content: space-between;
 }
 
-.list_name:hover{
+.list_name:hover {
     background-color: rgb(183, 216, 205)
+}
+
+.box_icon_title {
+    margin-left: 0.625rem;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+}
+
+.button_delete {
+    background-color: transparent;
+    border: 0;
+    outline: none;
+    cursor: pointer;
+    margin-right: 0.75rem;
+    margin-left: 0.60rem;
 }
