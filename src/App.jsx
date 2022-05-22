@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Lists from "./components/Lists";
 import ListPage from "./pages/ListPage";
 import './styles/App.css'
+import {CgPlayListAdd} from 'react-icons/cg'
 
 let localLists = [];
 let localTasks = [];
@@ -96,7 +97,7 @@ const App = () => {
                 </Route>
               ))}
               <Route path="/">
-                <p>Create or select your list</p>
+                <h1>Create or select your list <CgPlayListAdd color={"#1a8a52"}/></h1>
               </Route>
             </Switch>
           </div>
