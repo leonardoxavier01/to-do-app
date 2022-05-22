@@ -3,7 +3,6 @@ import { v4 as uuid } from "uuid";
 import { Link } from "react-router-dom";
 import ListNameBox from "../ListNameBox";
 import Input from '../InputText'
-import ClearInput from "../ClearInput";
 
 const Lists = (props) => {
   const newListTitleRef = useRef();
