@@ -22,6 +22,7 @@ export const TextCheckbox = styled.div`
         margin-right: 4rem;
         font-size: 1rem;
         font-weight: 500;
+        text-decoration: ${(props) => props.decoration};
     }
 `
 

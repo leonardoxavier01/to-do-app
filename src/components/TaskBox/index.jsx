@@ -6,7 +6,7 @@ import { TaskContainer, TextCheckbox, WrapperButtons } from './styles'
 const TaskBox = React.forwardRef((props, ref) => {
     return (
         <TaskContainer >
-            <TextCheckbox >
+            <TextCheckbox decoration={props.decoration} >
                 <input
                     type="checkbox"
                     onChange={props.doneHandler}

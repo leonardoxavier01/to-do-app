@@ -43,6 +43,7 @@ const Task = (props) => {
       )}
       {!isEditting && (
         <TaskBox
+          decoration={isDone ? 'line-through' : ''}
           doneHandler={doneHandler}
           ref={taskDoneRef}
           checked={isDone ? true : false}
