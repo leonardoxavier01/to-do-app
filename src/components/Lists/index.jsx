@@ -1,10 +1,12 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import { v4 as uuid } from "uuid";
 import { Link } from "react-router-dom";
 import ListNameBox from "../ListNameBox";
 import InputText from '../InputText'
 
 const Lists = (props) => {
+  const [activeLink, setActiveLink] = useState('/')
+
   const newListTitleRef = useRef();
 
   const addListHandler = (e) => {
@@ -24,10 +26,11 @@ const Lists = (props) => {
     <ul>
       {props.data.map((list, index) => (
         <li key={index}>
-          <Link to={"/" + list.id}>
+          <Link  onClick={() => setActiveLink("/" + list.id)} to={"/" + list.id}>
             <ListNameBox
+              color={activeLink === "/" + list.id ? '#b7d8cd' : '#f3faf8'}
               title={list.title}
-              onClick={() => removeListHandler(list.id)}
+              onClickButton={() => removeListHandler(list.id)}
             />
           </Link>
         </li>

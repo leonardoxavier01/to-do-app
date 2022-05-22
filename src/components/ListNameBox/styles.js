@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const ListNameContainer = styled.div`
-    background-color: rgb(243, 250, 248);
+    background-color: ${(props) => props.color};
     width: 90%;
     height: 2rem;
     border-radius: 0.50rem;

@@ -2,15 +2,15 @@ import React from 'react'
 import { FaBuffer } from 'react-icons/fa'
 import { ListNameContainer, Content, ButtonDelStyled } from './styles'
 
-const ListNameBox = ({ title, onClick }) => {
+const ListNameBox = (props) => {
   return (
-    <ListNameContainer className='list_name'>
+    <ListNameContainer color={props.color} className='list_name'>
       <Content className="box_icon_title">
         <FaBuffer color={"#1a8a52"} />
-        <span>{title}</span>
+        <span>{props.title}</span>
       </Content>
       <ButtonDelStyled className="button_delete"
-        onClick={onClick}>x
+        onClick={props.onClickButton}>x
       </ButtonDelStyled>
     </ListNameContainer>
   )
