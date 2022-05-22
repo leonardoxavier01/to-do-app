@@ -1,10 +1,11 @@
 import React from 'react'
-import { FormContainer, InputStyled, ButtonSaveStyled } from './styles'
+import { FormContainer, ButtonSaveStyled } from './styles'
+import ClearInput from '../ClearInput'
 
 const InputEdit = React.forwardRef((props, ref) => {
     return (
         <FormContainer width={props.width} onSubmit={props.onSubmit}>
-            <InputStyled
+            <ClearInput
                 placeholder={props.placeholder}
                 type="text"
                 value={props.value}

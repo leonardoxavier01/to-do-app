@@ -13,13 +13,7 @@ export const FormContainer = styled.form`
     flex-direction: row;
     border: 1px solid rgba(0, 0, 0, 0.322);
 `
-export const InputStyled = styled.input`
-    width: 80%;
-    border: 0;
-    font-size: 1.063rem;
-    outline: none;
-    background-color: transparent;
-`
+
 export const ButtonSaveStyled = styled.button`
     background-color: transparent;
     border: 0;
