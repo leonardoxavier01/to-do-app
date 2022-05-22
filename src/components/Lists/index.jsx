@@ -32,7 +32,7 @@ const Lists = (props) => {
               title={list.title}
               onClickButton={() => removeListHandler(list.id)}
             />
-          </Link>
+          </Link >
         </li>
       ))}
       <li>
