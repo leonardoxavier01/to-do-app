@@ -2,7 +2,7 @@ import React, { useRef } from "react";
 import { v4 as uuid } from "uuid";
 import { Link } from "react-router-dom";
 import ListNameBox from "../ListNameBox";
-import Input from '../InputText'
+import InputText from '../InputText'
 
 const Lists = (props) => {
   const newListTitleRef = useRef();
@@ -33,7 +33,7 @@ const Lists = (props) => {
         </li>
       ))}
       <li>
-        <Input
+        <InputText
           onSubmit={addListHandler}
           placeholder={'New List'}
           ref={newListTitleRef}
