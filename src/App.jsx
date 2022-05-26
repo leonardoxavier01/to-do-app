@@ -2,8 +2,8 @@ import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Lists from "./components/Lists";
 import ListPage from "./pages/ListPage";
-import './styles/App.css'
-import { CgPlayListAdd } from 'react-icons/cg'
+import { CgPlayListAdd } from "react-icons/cg"
+import { AppStyled, ConatinerApp, ListsStyled, ListPageStyled } from "./AppStyles"
 
 let localLists = [];
 let localTasks = [];
@@ -75,25 +75,25 @@ const App = () => {
     setTasks(tempTasks);
   }
 
-  let InputFirstList;
+  let inputFirstList;
   if (lists.length < 1) {
-    InputFirstList =
+    inputFirstList =
       <div>
         <h1>Create your list <CgPlayListAdd color={"#1a8a52"} /></h1>
         <Lists data={lists} onAddList={addList} onRemoveList={removeList} />
       </div>;
   } else {
-    InputFirstList = <h1>Select your list</h1>
+    inputFirstList = <h1>Select your list</h1>
   }
 
   return (
     <Router>
-      <div className="section" >
-        <div className="container">
-          <div className="lists">
+      <AppStyled >
+        <ConatinerApp>
+          <ListsStyled>
             <Lists data={lists} onAddList={addList} onRemoveList={removeList} />
-          </div>
-          <div className="list-page">
+          </ListsStyled>
+          <ListPageStyled>
             <Switch>
               {lists.map((list) => (
                 <Route key={list.id} path={"/" + list.id}>
@@ -108,12 +108,12 @@ const App = () => {
                 </Route>
               ))}
               <Route path="/">
-                {InputFirstList}
+                {inputFirstList}
               </Route>
             </Switch>
-          </div>
-        </div>
-      </div>
+          </ListPageStyled>
+        </ConatinerApp>
+      </AppStyled>
     </Router>
   );
 }
