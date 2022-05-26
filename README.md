@@ -15,7 +15,7 @@ npm ou yarn
 No seu terminal dê o comando:
 
 ```
-git clone https://github.com/leonardoxavier01/app-via-cep.git 
+git clone https://github.com/leonardoxavier01/to-do-app.git
 ```
 
 E depois:
