@@ -39,6 +39,7 @@ Tanto as listas como as tarefas podem ser editadas ou excluídas conforme a nece
 
 Os dados são salvos no LocalStorage do navegador.
 
+Para saber mais acesse o link:
 ```
 https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage
 ```
