@@ -7,7 +7,7 @@ const InputText = React.forwardRef((props, ref) => {
   return (
     <FormContainer onSubmit={props.onSubmit}>
       <ClearInput type="text" placeholder={props.placeholder}
-        maxLength="16" ref={ref} />
+        maxLength="32" ref={ref} />
       <ButtonAddStyled><BiPlus size={17} /></ButtonAddStyled>
     </FormContainer>
   )
